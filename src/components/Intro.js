@@ -62,7 +62,7 @@ export default function Intro() {
 
   return (
     <div className={classes.root}>
-      <section className={classes.section}>
+      <section className={classes.section} id="intro">
         <div className="jarallax">
           <Grid container spacing={2}>
             <Grid item xs={12}>

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '1140px',
     padding: theme.spacing(0, 2, 6),
   },
-  avatar: {
+  scrollDown: {
     width: '50px',
     height: '50px',
     border: `2px solid ${theme.palette.primary.main}`,
@@ -43,6 +44,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      '#intro'
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className={classes.root}>
@@ -71,9 +82,9 @@ export default function Header() {
           </Grid>
         </div>
       </section>
-      <Avatar className={classes.avatar}>
+      <IconButton className={classes.scrollDown} onClick={handleClick}>
         <KeyboardArrowDownIcon color="primary" />
-      </Avatar>
+      </IconButton>
     </div>
   );
 }
