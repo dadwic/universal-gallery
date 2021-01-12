@@ -11,10 +11,12 @@
     "@material-ui/icons": "^4.11.2",
     "aos": "^2.3.4",
     "clsx": "latest",
+    "gsap": "^3.6.0",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "dev": "next",
