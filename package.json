@@ -16,7 +16,9 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-transition-group": "^4.4.1"
+    "react-spring": "^8.0.27",
+    "react-transition-group": "^4.4.1",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "scripts": {
     "dev": "next",

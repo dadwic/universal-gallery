@@ -8,6 +8,7 @@ import createCache from '@emotion/cache';
 import theme from 'src/utils/theme';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './styles.css';
 
 export const cache = createCache({ key: 'css' });
 
