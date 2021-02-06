@@ -7,9 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
     display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
     background: 'transparent',
     backgroundImage:
       'linear-gradient(180deg, rgb(247, 249, 250) 100%, #fff 0%)',

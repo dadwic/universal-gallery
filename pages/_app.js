@@ -33,11 +33,11 @@ export default function MyApp(props) {
     <CacheProvider value={cache}>
       <Head>
         <meta charSet="utf-8" />
-        <title>David Shahriari</title>
+        <title>Universal Gallery Inc.</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta
           name="description"
-          content="This is the personal web site of David Shahriari."
+          content="This is the web site of Universal Gallery Inc."
         />
         <meta name="author" content="Oddwic Corporation" />
       </Head>

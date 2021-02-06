@@ -5,8 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    width: '100vh',
-    height: '80vh',
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
     background: 'grey',
     borderRadius: '5px',
     backgroundImage: 'url(/images/card.jpg)',
