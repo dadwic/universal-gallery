@@ -1,0 +1,32 @@
+{
+  "name": "nextjs",
+  "version": "5.0.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@material-ui/core": "next",
+    "@material-ui/icons": "^4.11.2",
+    "@react-spring/addons": "^9.0.0-beta.33",
+    "aos": "^2.3.4",
+    "clsx": "latest",
+    "delay": "^5.0.0",
+    "gsap": "^3.6.0",
+    "lorem-ipsum": "^2.0.3",
+    "next": "^10.0.6",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-spring": "^8.0.27",
+    "react-transition-group": "^4.4.1",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  }
+}
