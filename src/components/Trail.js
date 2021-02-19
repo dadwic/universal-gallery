@@ -1,19 +1,13 @@
 import React from 'react';
 import { useTrail, a } from 'react-spring';
 import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 350,
-    display: 'flex',
     position: 'relative',
     top: theme.spacing(3),
-    left: theme.spacing(3),
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
+    left: theme.spacing(15),
   },
   text: {
     position: 'relative',
@@ -42,23 +36,18 @@ export default function Trail({ open, children, ...props }) {
   });
   return (
     <div className={classes.root}>
-      <IconButton>
-        <MenuIcon fontSize="large" />
-      </IconButton>
-      <div>
-        {trail.map(({ x, height, ...rest }, index) => (
-          <a.div
-            key={items[index]}
-            className={classes.text}
-            style={{
-              ...rest,
-              transform: x.interpolate((x) => `translate3d(0,${x}px,0)`),
-            }}
-          >
-            <a.div style={{ height }}>{items[index]}</a.div>
-          </a.div>
-        ))}
-      </div>
+      {trail.map(({ x, height, ...rest }, index) => (
+        <a.div
+          key={items[index]}
+          className={classes.text}
+          style={{
+            ...rest,
+            transform: x.interpolate((x) => `translate3d(0,${x}px,0)`),
+          }}
+        >
+          <a.div style={{ height }}>{items[index]}</a.div>
+        </a.div>
+      ))}
     </div>
   );
 }

@@ -10,8 +10,11 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import InfoIcon from '@material-ui/icons/Info';
+import CallIcon from '@material-ui/icons/Call';
+import KingBedIcon from '@material-ui/icons/KingBed';
+import GalleryIcon from '@material-ui/icons/InsertPhoto';
 
 const drawerWidth = 240;
 
@@ -52,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'space-evenly',
   },
   content: {
     flexGrow: 1,
@@ -72,31 +75,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
-  const classes = useStyles();
+export default function PersistentDrawerLeft({ open, onClose }) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const classes = useStyles();
 
   return (
     <Drawer
-      className={classes.drawer}
-      variant="persistent"
       anchor="left"
       open={open}
+      onClose={onClose}
+      className={classes.drawer}
       classes={{
         paper: classes.drawerPaper,
       }}
     >
       <div className={classes.drawerHeader}>
-        <IconButton onClick={handleDrawerClose}>
+        <Typography variant="body1" fontWeight="bold">
+          Universal Gallery Inc.
+        </Typography>
+        <IconButton onClick={onClose}>
           {theme.direction === 'ltr' ? (
             <ChevronLeftIcon />
           ) : (
@@ -106,25 +103,36 @@ export default function PersistentDrawerLeft() {
       </div>
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <GalleryIcon />
+          </ListItemIcon>
+          <ListItemText primary="Gallery" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <KingBedIcon />
+          </ListItemIcon>
+          <ListItemText primary="Services" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="About" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <CallIcon />
+          </ListItemIcon>
+          <ListItemText primary="Contact" />
+        </ListItem>
       </List>
     </Drawer>
   );
