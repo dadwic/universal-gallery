@@ -1,6 +1,8 @@
 html,
 body {
   cursor: none;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */

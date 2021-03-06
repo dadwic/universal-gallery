@@ -1,12 +1,20 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useTransition, a } from 'react-spring';
 import shuffle from 'lodash/shuffle';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import useMeasure from '../hooks/useMeasure';
 import useMedia from '../hooks/useMedia';
 import data from './data';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: '100vh',
+  },
+}));
+
 export default function Gallery() {
+  const classes = useStyles();
   // Hook1: Tie media queries to the number of columns
   const columns = useMedia(
     ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
@@ -32,6 +40,7 @@ export default function Gallery() {
     });
     return [heights, gridItems];
   }, [columns, items, width]);
+
   // Hook6: Turn the static grid values into animated transitions, any addition, removal or change will be animated
   const transitions = useTransition(gridItems, (item) => item.css, {
     from: ({ xy, width, height }) => ({ xy, width, height, opacity: 0 }),
@@ -41,9 +50,16 @@ export default function Gallery() {
     config: { mass: 5, tension: 500, friction: 100 },
     trail: 25,
   });
+
+  const handleClick = (href) => {
+    if (process.browser) {
+      window.open(href);
+    }
+  };
+
   // Render the grid
   return (
-    <div>
+    <section className={classes.root} id="gallery">
       <Typography
         variant="h2"
         align="center"
@@ -56,6 +72,7 @@ export default function Gallery() {
         {transitions.map(({ item, props: { xy, ...rest }, key }) => (
           <a.div
             key={key}
+            onClick={() => handleClick(item.css)}
             style={{
               transform: xy.interpolate(
                 (x, y) => `translate3d(${x}px,${y}px,0)`
@@ -63,10 +80,10 @@ export default function Gallery() {
               ...rest,
             }}
           >
-            <div style={{ backgroundImage: item.css }} />
+            <div style={{ backgroundImage: `url(${item.css})` }} />
           </a.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

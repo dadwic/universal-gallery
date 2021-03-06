@@ -1,4 +1,5 @@
 import React from 'react';
+import debounce from 'lodash.debounce';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -79,6 +80,18 @@ export default function PersistentDrawerLeft({ open, onClose }) {
   const theme = useTheme();
   const classes = useStyles();
 
+  const handleClick = (event, target) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      `#${target}`
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Close drawer after 500ms
+      debounce(onClose, 500)();
+    }
+  };
+
   return (
     <Drawer
       anchor="left"
@@ -103,31 +116,31 @@ export default function PersistentDrawerLeft({ open, onClose }) {
       </div>
       <Divider />
       <List>
-        <ListItem button>
+        <ListItem button onClick={(e) => handleClick(e, 'back-to-top-anchor')}>
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={(e) => handleClick(e, 'gallery')}>
           <ListItemIcon>
             <GalleryIcon />
           </ListItemIcon>
           <ListItemText primary="Gallery" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={(e) => handleClick(e, 'services')}>
           <ListItemIcon>
             <KingBedIcon />
           </ListItemIcon>
           <ListItemText primary="Services" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={(e) => handleClick(e, 'about')}>
           <ListItemIcon>
             <InfoIcon />
           </ListItemIcon>
           <ListItemText primary="About" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={(e) => handleClick(e, 'contact')}>
           <ListItemIcon>
             <CallIcon />
           </ListItemIcon>

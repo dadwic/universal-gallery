@@ -22,19 +22,12 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `{
                 '@context': 'https://schema.org/',
-                '@type': 'Person',
-                name: 'David Shahriari',
-                url: 'https://davidsh.ca/',
-                image: 'https://davidsh.ca/images/avatar.jpeg',
+                '@type': 'Organization',
+                name: 'Universal Gallery Inc.',
+                url: 'https://universalgallery.ca/',
                 sameAs: [
-                  'https://github.com/davidshahriari',
-                  'https://davidsh.ca/',
-                ],
-                jobTitle: 'Software Engineer',
-                worksFor: {
-                  '@type': 'Organization',
-                  name: 'Oddwic',
-                },
+                  'https://universalgallery.ca/',
+                ]
               }`,
             }}
           />

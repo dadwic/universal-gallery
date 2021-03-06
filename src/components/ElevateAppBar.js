@@ -161,7 +161,6 @@ export default function ElevateAppBar(props) {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-      <Toolbar id="back-to-top-anchor" />
     </React.Fragment>
   );
 }
