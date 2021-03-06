@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     transitionProperty: 'background-color, opacity, transform, mix-blend-mode',
     zIndex: 9999,
     mixBlendMode: 'difference',
+    boxShadow: theme.shadows[10],
   },
   cursorHidden: {
     opacity: 0,

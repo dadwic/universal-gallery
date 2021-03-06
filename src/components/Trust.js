@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(12, 8),
+    padding: theme.spacing(8, 0),
     backgroundColor: 'rgb(247, 249, 250)',
     boxShadow: '0 5px 20px 0 rgb(90 202 157 / 5%)',
     borderBottom: '1px solid #ddd',

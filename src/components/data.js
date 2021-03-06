@@ -1,15 +1,15 @@
 export default [
   {
     css: '/images/gallery/image1.jpeg',
-    height: 400,
+    height: 771,
   },
   {
     css: '/images/gallery/image2.jpeg',
-    height: 500,
+    height: 771,
   },
   {
     css: '/images/gallery/image3.jpeg',
-    height: 600,
+    height: 771,
   },
   {
     css: '/images/gallery/image4.jpeg',
@@ -17,7 +17,7 @@ export default [
   },
   {
     css: '/images/gallery/image5.jpeg',
-    height: 500,
+    height: 771,
   },
   {
     css: '/images/gallery/image6.jpeg',
@@ -25,22 +25,18 @@ export default [
   },
   {
     css: '/images/gallery/image7.jpeg',
-    height: 300,
+    height: 771,
   },
   {
     css: '/images/gallery/image8.jpeg',
-    height: 300,
+    height: 771,
   },
   {
     css: '/images/gallery/image9.jpeg',
-    height: 500,
+    height: 771,
   },
   {
     css: '/images/gallery/image10.jpeg',
-    height: 400,
-  },
-  {
-    css: '/images/gallery/image11.jpeg',
     height: 771,
-  },
+  }
 ];

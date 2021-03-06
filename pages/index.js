@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   toolbar: {
-    minHeight: 0,
+    minHeight: '0px !important',
   },
   menuIcon: {
     position: 'fixed',

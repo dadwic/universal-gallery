@@ -10,8 +10,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
   },
+  container: {
+    height: '100%',
+  },
   info: {
-    padding: theme.spacing(12, 8),
+    padding: theme.spacing(8, 0),
   },
   title: {
     fontWeight: 'bold !important',
@@ -23,7 +26,7 @@ export default function Contact() {
 
   return (
     <section className={classes.root} id="contact">
-      <Container>
+      <Container className={classes.container}>
         <Grid container>
           <Grid item xs={12} md={6} className={classes.info}>
             <Typography variant="h4" className={classes.title} gutterBottom>

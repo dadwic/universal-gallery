@@ -9,7 +9,7 @@ import data from './data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
+    padding: theme.spacing(6, 6, 2),
   },
 }));
 
@@ -65,10 +65,11 @@ export default function Gallery() {
         align="center"
         fontWeight="bold"
         letterSpacing="-5px"
+        gutterBottom
       >
         Gallery
       </Typography>
-      <div {...bind} class="list" style={{ height: Math.max(...heights) }}>
+      <div {...bind} className="list" style={{ height: Math.max(...heights) }}>
         {transitions.map(({ item, props: { xy, ...rest }, key }) => (
           <a.div
             key={key}

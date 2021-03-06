@@ -38,7 +38,7 @@ export default function Trail({ open, children, ...props }) {
     <div className={classes.root}>
       {trail.map(({ x, height, ...rest }, index) => (
         <a.div
-          key={items[index]}
+          key={index}
           className={classes.text}
           style={{
             ...rest,
