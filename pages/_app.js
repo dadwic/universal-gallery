@@ -11,7 +11,7 @@ import 'aos/dist/aos.css';
 import './leaflet.css';
 import './styles.css';
 
-export const cache = createCache({ key: 'css' });
+export const cache = createCache({ key: 'css', prepend: true });
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -38,7 +38,7 @@ export default function MyApp(props) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta
           name="description"
-          content="This is the web site of Universal Gallery Inc."
+          content="Universal Gallery Inc. is a professional custom furniture and cabinetry in Montreal."
         />
         <meta name="author" content="Oddwic Corporation" />
       </Head>

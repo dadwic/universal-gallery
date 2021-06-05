@@ -10,7 +10,6 @@ import Intro from 'src/components/Intro';
 import ScrollTop from 'src/components/ScrollTop';
 import Drawer from 'src/components/Drawer';
 import Gallery from 'src/components/Gallery';
-import Trust from 'src/components/Trust';
 import Contact from 'src/components/Contact';
 import Copyright from 'src/components/Copyright';
 
@@ -53,7 +52,6 @@ export default function Index(props) {
           <Gallery />
           <Cursor />
         </NoSsr>
-        <Trust />
         <Contact />
         <Copyright />
         <div className={classes.menuIcon}>

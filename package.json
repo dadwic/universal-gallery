@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "version": "5.0.0",
+  "name": "universalgallery",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/cache": "latest",

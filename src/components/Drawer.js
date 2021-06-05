@@ -16,6 +16,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import CallIcon from '@material-ui/icons/Call';
 import KingBedIcon from '@material-ui/icons/KingBed';
 import GalleryIcon from '@material-ui/icons/InsertPhoto';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 const drawerWidth = 240;
 
@@ -145,6 +146,17 @@ export default function PersistentDrawerLeft({ open, onClose }) {
             <CallIcon />
           </ListItemIcon>
           <ListItemText primary="Contact" />
+        </ListItem>
+        <ListItem
+          button
+          component="a"
+          href="https://www.instagram.com/universal.gallery.inc/"
+          target="_blank"
+        >
+          <ListItemIcon>
+            <InstagramIcon />
+          </ListItemIcon>
+          <ListItemText primary="Instagram" />
         </ListItem>
       </List>
     </Drawer>

@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const position = [46.820833, -71.255798];
+const position = [45.4600145, -73.8092315];
 
 export default function Contact() {
   const classes = useStyles();
@@ -28,7 +28,9 @@ export default function Contact() {
         />
         <Marker position={position}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            110 Avenue de Forest Gardens,
+            <br />
+            Pointe-Claire, QC H9R 3T1, Canada
           </Popup>
         </Marker>
       </MapContainer>
